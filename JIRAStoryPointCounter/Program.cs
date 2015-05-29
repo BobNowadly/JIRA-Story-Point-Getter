@@ -19,7 +19,7 @@ namespace JIRAStoryPointCounter
                 var connection = new BasicConnection(options.UserName,
                         options.Password, client);
 
-                string url = string.Format("rest/api/latest/search?fields=customfield_10005&jql=project={0}%20AND%20issuetype=Story&maxResults=500", options.Project);
+                string url = string.Format("rest/api/latest/search?fields=customfield_10005&jql=project={0}%20AND%20issuetype=Story%20AND%20(fixVersion%20!=%20Post-V2.0%20OR%20fixVersion%20is%20EMPTY)&maxResults=500", options.Project);
 
                 Console.WriteLine("Today is: {0}", DateTime.Now);
 
